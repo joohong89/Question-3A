@@ -29,10 +29,10 @@ namespace api_consumer.Controllers
 
             List<string> queueItems = new List<string>();
             var factory = new ConnectionFactory() {
-                // HostName = Environment.GetEnvironmentVariable("RABBITMQ_HOST"),
-                // Port = Convert.ToInt32(Environment.GetEnvironmentVariable("RABBITMQ_PORT"))
-                 HostName = "localhost", 
-                 Port= 31672
+                HostName = Environment.GetEnvironmentVariable("RABBITMQ_HOST"),
+                Port = Convert.ToInt32(Environment.GetEnvironmentVariable("RABBITMQ_PORT"))
+                //HostName = "localhost", 
+                //Port= 31672
             };
             using (var connection = factory.CreateConnection())
             using (var channel = connection.CreateModel())
