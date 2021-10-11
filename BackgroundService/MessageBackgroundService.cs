@@ -27,10 +27,10 @@ namespace rabbit_consumer.HostedService
             // var factory = new ConnectionFactory { HostName = "host.docker.internal" };
             var factory = new ConnectionFactory
             {
-                HostName = "localhost",
-                Port = 31672
-                // HostName = Environment.GetEnvironmentVariable("RABBITMQ_HOST"),
-                // Port = int.Parse(Environment.GetEnvironmentVariable("RABBITMQ_PORT"))
+                // HostName = "localhost",
+                // Port = 31672
+                 HostName = Environment.GetEnvironmentVariable("RABBITMQ_HOST"),
+                 Port = int.Parse(Environment.GetEnvironmentVariable("RABBITMQ_PORT"))
             };
 
             // create connection  
