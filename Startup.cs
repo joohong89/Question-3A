@@ -27,6 +27,8 @@ namespace api_consumer
         {
 
             services.AddControllers();
+
+            services.AddHostedService<rabbit_consumer.HostedService.MessageBackgroundService>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "api_consumer", Version = "v1" });
